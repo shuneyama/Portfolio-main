@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Shune</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="fundo-parceiros"></div>
+    <button class="criacoes-voltartopo escondido" id="voltarTopo" title="Voltar ao topo">▲</button>
+    <div id="modalPost" class="modal-post escondido">
+        <div class="modal-post-conteudo" id="modalPostConteudo"></div>
+    </div>
+    <div id="modalImagem" class="modal-imagem escondido">
+        <button class="modal-imagem-fechar" id="modalImagemFechar">✕</button>
+       <img id="modalImagemSrc" alt="">
+    </div>
+    <div id="toastCopiado" class="toast-copiado escondido">Link copiado!</div>
+    <div id="zoom-wrapper">
+        <header class="header"></header>
+
+        <div class="menus">
+            <nav>
+                <ul class="menu1">
+                    <li><a href="#" class="botao-inicio">Início</a></li>
+                    <li class="lista1">
+                        <a>Comissões ▾</a>
+                        <ul class="lista1conteudo">
+                            <li><a href="#" class="botao-datapacks">Datapacks</a></li>
+                            <li><a href="#" class="botao-mods">Mods</a></li>
+                            <li><a href="#" class="botao-modpacks">Modpacks</a></li>
+                            <li><a href="#" class="botao-plugins">Plugins</a></li>
+                            <li><a href="#" class="botao-ports">Ports</a></li>
+                            <li><a href="#" class="botao-extras">Extras</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="botao-precos">Preços</a></li>
+                </ul>
+
+                <img src="img/shune.png" class="fotomenu">
+
+                <ul class="menu2">
+                    <li><a href="#" class="botao-criacoes">Criações</a></li>
+                    <li><a href="#" class="botao-parceiros">Parceiros</a></li>
+                    <li><a href="#" class="botao-termos">Termos</a></li>
+                </ul>
+            </nav>
+
+            <div class="submenu">
+                <div class="submenu1">
+                    <p>Desenvolvo coisinhas para Minecraft como Hobby!</p>
+                </div>
+                <div class="espacofoto"></div>
+                <div class="submenu2">
+                    <p>Entre em contato comigo por: <a href="https://discord.com/invite/VAvXXKbVrT" target="_blank" rel="noopener noreferrer">Discord</a> <a href="https://x.com/shuneyama" target="_blank" rel="noopener noreferrer">Twitter</a></p>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <div class="apresentacao">
+                <div class="textoapresentacao">
+                    <h1 data-text="QUEM SOU EU?">QUEM SOU EU?</h1>
+                    <p>Olá, pessoinha! Meu nome é Shune, tenho 21 anos e trabalho com programação, além de cursar
+                        faculdade na mesma área. Entrei no mundo dos SMPs durante a pandemia, quando comecei a criar
+                        modpacks para jogar com alguns amigos e me divertia desenvolvendo mods bobinhos. Com o tempo,
+                        fui me aprofundando cada vez mais nesse universo.</p>
+
+                    <p>Hoje, desenvolvo mods para diferentes tipos de SMPs, crio modpacks de estilos variados e também
+                        faço outras coisinhas que você pode conferir no meu portfólio! Espero que encontre o que procura
+                        e, se precisar de ajuda para criar algo que não esteja por aqui, podemos conversar. Quem sabe eu
+                        não consigo resolver seu problema com uma comissão? >:D</p>
+
+                    <p>Se tiver se interessado no meu trabalho, você pode entrar em contato comigo por meio do meu
+                        servidor do Discord, abrindo um ticket, ou por meio do meu Twitter (onde eu solto spoilers de
+                        alguns projetinhos), mandando mensagem na minha DM!</p>
+                </div>
+
+                <div class="fotoapresentacao">
+                    <div class="skin-fundo">
+                        <img src="img/skins/shune1.png" id="skinAtual">
+                    </div>
+                </div>
+
+                <div class="conteudoprecos escondido">
+                    <h1 data-text="TABELA DE PREÇOS">TABELA DE PREÇOS</h1>
+
+                    <div class="precoitem">
+                        <h2>★ Mods Personalizados</h2>
+                        <p>Os preços dos mods são definidos a partir do escopo de cada comissão, com um preço base em
+                            R$35,00, com direito a 3 alterações gratuitas.</p>
+                        <p>Criação de texturas customizadas e modelos customizados costumam ter valores adicionais.</p>
+                        <p>Funções complexas (sistemas inteiros, integrações com outros mods) são analisadas
+                            individualmente após análise.</p>
+                        <p>Atualizações em mods finalizados custam em torno de 40% do valor original.</p>
+                        <p>Alterações em mods já existentes, como adições de grimórios no Irons Spells, possuem valores
+                            conversados a parte.</p>
+                        <p>Sistemas de mods baseados em comissões já feitas possuem preços pré-definidos que podem
+                            sofrer descontos.</p>
+                    </div>
+
+                    <div class="precoitem">
+                        <h2>★ Modpacks</h2>
+                        <p>Modpack Leve (até 100 mods, configurado): R$20,00.</p>
+                        <p>Modpack Médio (até 200 mods, otimizado): R$30,00.</p>
+                        <p>Modpack Pesado (300+ mods, configurado e otimizado para servidor): R$40,00+.</p>
+                        <p>Ajuda em analisar conflitos e melhorar sua performance: R$ 15,00 - R$ 35,00.</p>
+                        <p>Ajuda em apenas configurar os mods ou alterar loots/receitass/drops de um modpack já
+                            existente: R$ 15,00+ a depender do tamanho.</p>
+                    </div>
+
+                    <div class="precoitem">
+                        <h2>★ Plugins (Spigot/Paper)</h2>
+                        <p>Assim como nos mods, o valor varia conforme a complexidade e a quantidade de funcionalidades,
+                            com valor base de: R$25,00.</p>
+                        <p>Plugins com banco de dados, GUIs avançadas ou integrações são cotados sob demanda.</p>
+                    </div>
+
+                    <div class="precoitem">
+                        <h2>★ Datapacks Personalizados</h2>
+                        <p>O preço varia conforme o tipo de mecânica e a quantidade de funções envolvidas, com valor
+                            base de: R$5,00.</p>
+                        <p>Addon para o mod Origins: R$8,00 por origem com foco em otimização.</p>
+                        <p>Datapacks maiores ou com sistemas integrados: orçamento personalizado.</p>
+                    </div>
+                </div>
+
+                <div class="conteudodatapacks escondido">
+                    <div class="modsheader">
+                        <div class="fotomods">
+                            <img src="img/shunedatapacks.png">
+                        </div>
+                        <div class="textomods">
+                            <h1 data-text="CRIAÇÃO DE DATAPACKS">CRIAÇÃO DE DATAPACKS</h1>
+                            <p>Datapacks foram o meu primeiro contato com criação de conteúdo para Minecraft! Antes
+                                mesmo de me aventurar nos mods, eu já estava brincando com funções, conquistas e loots
+                                para deixar o jogo do jeitinho que eu queria, tudo isso usando apenas o que o próprio
+                                Minecraft já oferece.</p>
+                            <p>Hoje, costumama me procurar para criar addons para o mod Origins (por mais que eu prefira
+                                criar um mod próprio a parte...), expandindo as possibilidades de raças, poderes e
+                                habilidades de uma forma extremamente otimizada. Fora isso, também consigo criar
+                                mecânicas customizadas como sistemas de recompensa, eventos personalizados, alterações
+                                em receitas, drops e muito mais!</p>
+                            <p>A maior vantagem dos Datapacks é que eles são leves, não exigem mods do lado do cliente e
+                                funcionam em qualquer servidor vanilla. Perfeito para SMPs que querem algo único sem
+                                complicar a vida dos jogadores!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteudomods escondido">
+                    <div class="modsheader">
+                        <div class="fotomods">
+                            <img src="img/shunemods.png">
+                        </div>
+                        <div class="textomods">
+                            <h1 data-text="CRIAÇÃO DE MODS">CRIAÇÃO DE MODS</h1>
+                            <p>Desde 2022, contribuí com alguns SMP's criando pequenos mods que possuíam apenas blocos
+                                ou itens para que fossem usados em construções ou como relíquias de história. Porém,
+                                desde o ano passado, eu venho estudado cada vez mais o desenvolvimento de mods para o
+                                Minecraft, desde a 1.16 até a 26.1, seja Forge, NeoForge ou Fabric!</p>
+                            <p>Atualmente, tenho como conhecimento a inserção de elementos como: Blocos, Itens,
+                                Músicas/Sons, Receitas, Armaduras, Ferramentas, Minérios, Plantações, Sistemas
+                                Personalizados, Ports, Comandos, e muito mais!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteudomodpacks escondido">
+                    <div class="modsheader">
+                        <div class="fotomods">
+                            <img src="img/shunemodpacks.png">
+                        </div>
+                        <div class="textomods">
+                            <h1 data-text="CRIAÇÃO DE MODPACKS">CRIAÇÃO DE MODPACKS</h1>
+                            <p>Se você está lendo isso, eu chuto que você esteja precisando de ajuda na hora de montar
+                                seu Modpack, não é mesmo? Bom, antes mesmo de começar a desenvolver mods, eu sempre fui
+                                apaixonado em montar Modpacks completamente aleatórios para que eu e meus amigos
+                                pudéssemos jogar juntos.</p>
+                            <p>Porém, eu sempre fui a pessoa com o computador mais lentinho... Então digamos que os
+                                Modpacks que eu montava (e monto até hoje), são mais focados em garantir que pessoas de
+                                até 4GB de Memória RAM ou que tenham uma CPU antiguinha, consigam aproveitar (mesmo em
+                                40FPS...)!</p>
+                            <p>Por isso, se você está precisando de ajuda, pode ter certeza que eu vou garantir que seu
+                                Servidor seja leve o suficiente para que a maioria dos seus jogadores consigam jogar!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteudoplugins escondido">
+                    <div class="modsheader">
+                        <div class="fotomods">
+                            <img src="img/shuneplugins.png">
+                        </div>
+                        <div class="textomods">
+                            <h1 data-text="CRIAÇÃO DE PLUGINS">CRIAÇÃO DE PLUGINS</h1>
+                            <p>Plugins são uma das formas mais práticas de adicionar novas funcionalidades ao seu
+                                servidor sem precisar mexer no cliente dos jogadores! Trabalho com Spigot, Paper e seus
+                                forks, criando desde coisas simples até sistemas mais robustos com banco de dados, GUIs
+                                e integrações com outros plugins.</p>
+                            <p>Atualmente, consigo desenvolver plugins envolvendo: Comandos customizados, eventos
+                                personalizados, sistemas de economia, GUIs interativas, integração com PlaceholderAPI e
+                                Vault, persistência de dados, scoreboards dinâmicas, sistemas de chat e muito mais!</p>
+                            <p>O maior benefício dos plugins é que tudo roda do lado do servidor, então seus jogadores
+                                podem entrar usando o Minecraft normal, sem precisar instalar nada extra. Ideal para
+                                servidores survival, RP, minigames ou qualquer outro estilo!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteudoports escondido">
+                    <div class="modsheader">
+                        <div class="fotomods">
+                            <img src="img/shuneports.png">
+                        </div>
+                        <div class="textomods">
+                            <h1 data-text="PORTS DE MODS">PORTS DE MODS</h1>
+                            <p>Sabe aquele mod incrível que ficou preso numa versão antiga do Minecraft e nunca foi
+                                atualizado? Ou aquele mod novo que você queria muito usar numa versão mais antiga onde
+                                seu modpack tá rodando? Eu posso resolver esse problema portando o mod para a versão que
+                                você precisa!</p>
+                            <p>Trabalho com ports entre versões (desde a 1.16 até a 26.1, em ambas as direções) e também
+                                entre loaders diferentes, seja Forge para NeoForge, Fabric para Forge ou qualquer outra
+                                combinação. Cada port é analisado individualmente, já que a complexidade depende muito
+                                de quanto a API do Minecraft mudou entre as versões.</p>
+                            <p>Importante: para fazer um port de um mod que não é meu, é necessário ter autorização do
+                                autor original. Se você quer portar algum mod específico, me chama no Discord que a
+                                gente conversa sobre as possibilidades!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteudoextras escondido">
+                    <div class="modsheader">
+                        <div class="fotomods">
+                            <img src="img/shuneextras.png">
+                        </div>
+                        <div class="textomods">
+                            <h1 data-text="EXTRAS">EXTRAS</h1>
+                            <p>Além das categorias principais, eu também ofereço alguns serviços extras que podem ser
+                                combinados com a sua comissão ou contratados individualmente! Aqui estão alguns deles:
+                            </p>
+                            <p>★ <strong>Diagnóstico e otimização:</strong> seu servidor está com TPS baixo ou seus
+                                jogadores reclamam de FPS ruim? Eu faço análise completa de performance (Spark, perfis,
+                                logs) para identificar mods problemáticos, configurações ruins ou gargalos de hardware,
+                                e te entrego um relatório com soluções. Não faço alterações (a não ser que seja
+                                explicitamente solicitado), apenas informo os problemas.</p>
+                            <p>★ <strong>Sistemas já desenvolvidos:</strong> cada comissão que eu finalizo e publico
+                                pode ser revendida como um produto individual com preço base já definido! Dá uma olhada
+                                na aba de Criações para conferir os sistemas de mods, datapacks e plugins que já estão
+                                prontinhos para uso.</p>
+                            <p>★ <strong>Configuração de host:</strong> se você quer incluir na comissão a montagem e
+                                configuração da sua host (Pterodactyl, MagnoHost, ou qualquer outra), eu também faço!
+                                Deixo tudo prontinho pra você só ligar e jogar.</p>
+                            <p>★ <strong>Programa de parceria:</strong> clientes que se tornam meus parceiros recebem
+                                descontos especiais em comissões futuras e também têm prioridade no atendimento, então é
+                                sempre bom manter uma boa relação!</p>
+                            <p>Não encontrou o que você precisa em nenhuma das categorias? Ou ficou em dúvida se eu
+                                consigo fazer algo específico? Manda mensagem no meu Discord pessoal sem medo! Tem muita
+                                coisa que eu sei fazer e que talvez eu tenha esquecido de listar aqui, então sempre vale
+                                a pena perguntar antes de desistir!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conteudotermos escondido">
+                    <h1 data-text="TERMOS E CONDIÇÕES">TERMOS E CONDIÇÕES</h1>
+                    <p>Antes de comissionar comigo, dá uma lida nos termos abaixo! Eles existem <strong>pra garantir que
+                            tudo corra bem pra ambos os lados</strong> e evitar qualquer dor de cabeça durante o
+                        processo. Se tiver qualquer dúvida sobre algum ponto, é só me chamar que eu explico com prazer.
+                        Ao abrir um ticket, <strong>você concorda automaticamente com todos eles</strong>.</p>
+                </div>
+
+                <div class="termos escondido">
+                    <div class="termosgrid">
+                        <div class="termoscard">
+                            <h2>⋆˚꩜｡ Geral</h2>
+                            <div class="termositem">
+                                <h3>1 — Propriedade</h3>
+                                <p>Após a entrega, o conteúdo comissionado (mods, modpacks, plugins, ports, recriações,
+                                    modelos e texturas) será de propriedade do servidor/cliente.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>2 — Publicação</h3>
+                                <p>Algumas comissões que sejam novas para mim poderão ser publicadas nas minhas redes
+                                    sociais.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>3 — Direito de recusa</h3>
+                                <p>Tenho meu direito de recusar a solicitação de clientes que me deixe desconfortável ou
+                                    pedidos que estejam além da minha habilidade técnica.</p>
+                            </div>
+                        </div>
+
+                        <div class="termoscard">
+                            <h2>⋆˚꩜｡ Alterações</h2>
+                            <div class="termositem">
+                                <h3>1 — Durante o desenvolvimento</h3>
+                                <p>Quantidade ilimitada de alterações livres.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>2 — Após a finalização</h3>
+                                <p>Serão aceitas até 3 alterações gratuitas. Após o limite, será cobrada uma taxa de 30%
+                                    sobre o valor original da comissão por rodada de alteração.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>3 — Adições de conteúdo novo</h3>
+                                <p>Solicitar uma função nova, um item novo, um mod novo, ou qualquer coisa em um pedido
+                                    já finalizado, será considerado uma comissão à parte, porém com desconto no valor
+                                    final.</p>
+                            </div>
+                            <p class="termosaviso">Lembre-se que exceder os limites de alterações pode afetar o
+                                progresso de outros pedidos e, consequentemente, o tempo de espera.</p>
+                        </div>
+
+                        <div class="termoscard">
+                            <h2>⋆˚꩜｡ Prazos</h2>
+                            <div class="termositem">
+                                <h3>1 — Prazos</h3>
+                                <p>O tempo de entrega será discutido com o cliente dependendo da complexidade da
+                                    comissão. Normalmente, minhas comissões variam de 3 dias a 3 semanas, mas esse prazo
+                                    é apenas uma estimativa.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>2 — Folgas</h3>
+                                <p>Fins de semana são meus dias de folga, eu uso esse tempo para descansar, então não
+                                    haverá progresso nesses dias! Peço que evite qualquer cobrança nesses dias a não ser
+                                    que eu informe algo.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>3 — Inatividade</h3>
+                                <p>Caso o cliente fique 3 semanas sem responder ou dar qualquer sinal sem justificativa,
+                                    a comissão será cancelada e o valor pago não será reembolsado.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>4 — Informações</h3>
+                                <p>O cliente deve fornecer todas as informações e requisitos necessários antes do início
+                                    do trabalho, seja por documentos ou diretamente no ticket do Discord.</p>
+                            </div>
+                        </div>
+
+                        <div class="termoscard">
+                            <h2>⋆˚꩜｡ Financeiro</h2>
+                            <div class="termositem">
+                                <h3>1 — Pagamentos</h3>
+                                <p>50% no início da comissão e 50% na entrega final.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>2 — Reembolsos</h3>
+                                <p>O valor reembolsado será proporcional ao progresso da comissão, não havendo reembolso
+                                    após a finalização da comissão ou após sumiço sem justificativa.</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>3 — Fila de prioridade</h3>
+                                <p>Caso a fila esteja grande e você precise do trabalho o mais rápido possível, será
+                                    cobrada uma taxa de 50% sobre o valor da comissão (podendo aumentar).</p>
+                            </div>
+                            <div class="termositem">
+                                <h3>4 — Preços de modelos/texturas</h3>
+                                <p>Discutidos diretamente com o cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardsmods escondido">
+                <div class="cardmod">
+                    <img src="img/mods/blocos.png" alt="Blocos">
+                    <h3>BLOCOS</h3>
+                    <p>Desde blocos simples com suas variantes (escadas, lajes, cercas etc), até blocos com novas formas
+                        (como vasos, cabeças ou objetos de cenário)!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/itens.png" alt="Itens">
+                    <h3>ITENS</h3>
+                    <p>Moedas, chaves, esferas, jóias e o que mais você imaginar. Consigo fazer itens normais até alguns
+                        que oferecem efeitos enquanto se segura!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/musicas.png" alt="Músicas/Sons">
+                    <h3>MÚSICAS E SONS</h3>
+                    <p>Se você precisa adicionar algum efeito sonoro para suas estruturas de Lore, ou alguma música
+                        ambiente sem precisar usar o SoundPad ou VoiceMod, este é o lugar certo! Por comando ou por
+                        discos, você pode reproduzir o som que você quiser, sempre que precisar!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/receitas.png" alt="Receitas">
+                    <h3>RECEITAS</h3>
+                    <p>Tá afim de criar ferramentas ou comidas mas precisa que obrigatoriamente os seus jogadores façam
+                        receitas na Crafting Table, cozinhem algo na Fornalha ou só tá afim de alterar algo do tipo de
+                        outros mods? Eu te ajudo com isso em alguns instantes!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/armaduras.png" alt="Armaduras">
+                    <h3>ARMADURAS</h3>
+                    <p>Quer que seus jogadores tenham um novo visual nos momentos tensos de batalhas, seja criando uma
+                        armadura nova ou alterado o visual de uma existente (vanilla ou de mod)? Eu resolvo isso! (Ainda
+                        aprendendo a fazer com detalhes 3D)</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/ferramentas.png" alt="Ferramentas">
+                    <h3>FERRAMENTAS</h3>
+                    <p>Quer que os mesmos jogadores tenham uma nova arma, seja especial de Lore, para própria Staff ou
+                        porque você precisa? Ou alguma coisa no estilo de machados/picaretas/grimórios/paxels/cajados
+                        etc? Então vamos resolver isso!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/minerios.png" alt="Minérios">
+                    <h3>MINÉRIOS</h3>
+                    <p>Junto de ferramentas novas, porque não adicionar um minério novo pra trazer aquela sensação de ir
+                        minerar com empolgação igual a primeira vez jogando? Aqui fazemos em todas as dimensões!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/plantacoes.png" alt="Plantações">
+                    <h3>PLANTAÇÕES</h3>
+                    <p>Um dia construindo, outro dia na fazenda. Quer mais uma semente pra adicionar no seu quintal no
+                        intuito de deixar ele mais verde (ou outra cor..?)? Eu arrumo uma nova comidinha num instante!
+                    </p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/sistemas.png" alt="Sistemas Personalizados">
+                    <h3>SISTEMAS PERSONALIZADOS</h3>
+                    <p>Precisa de algo mais elaborado, com regras próprias, eventos personalizados ou mecânicas únicas
+                        pra deixar seu servidor com uma cara só sua? Posso construir esses sistemas do zero!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/ports.png" alt="Ports">
+                    <h3>PORTS</h3>
+                    <p>Tem um mod favorito que ficou preso numa versão antiga e você queria muito usar em uma versão
+                        mais nova (ou vice-versa)? Posso portar mods entre versões e até entre loaders (Forge, NeoForge,
+                        Fabric)!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/comandos.png" alt="Comandos">
+                    <h3>COMANDOS</h3>
+                    <p>Precisa de comandos customizados pra facilitar a vida da staff ou criar mecânicas específicas no
+                        seu servidor? Crio comandos completos com argumentos, sugestões e permissões integradas!</p>
+                </div>
+                <div class="cardmod">
+                    <img src="img/mods/extras.png" alt="Extras">
+                    <h3>EXTRAS</h3>
+                    <p>Tem alguma ideia diferente que não se encaixa em nenhuma das categorias acima? Manda mensagem que
+                        a gente conversa e descobre se dá pra realizar!</p>
+                </div>
+            </div>
+
+            <div class="statuscomissoes">
+                <h2>.✦ ݁˖ Status das Minhas Comissões ˖ ݁✦.</h2>
+                <div class="cardsstatus">
+                    <div class="cardstatus">
+                        <img src="img/status3.gif" alt="Mods">
+                        <p>🧡 Mods: 4/10</p>
+                    </div>
+                    <div class="cardstatus">
+                        <img src="img/status1.gif" alt="Modpacks">
+                        <p>💜 Modpacks: 2/10</p>
+                    </div>
+                    <div class="cardstatus">
+                        <img src="img/status2.gif" alt="Datapacks/Plugins">
+                        <p>💛 Datapacks/Plugins: 6/10</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardsparceiros escondido">
+                <h1 class="tituloparceiros" data-text="PARCEIROS">PARCEIROS</h1>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/aelysium.png" alt="Aelysium">
+                    <div class="cardparceiro-info">
+                        <h3>Aelysium (Atual)</h3>
+                        <p>Criador de Mod + Criador de Modpack</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/musae_eras.png" alt="Musae Eras">
+                    <div class="cardparceiro-info">
+                        <h3>Musae Eras (2026)</h3>
+                        <p>Criador de Mod + Otimizador de Modpack</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/apocalypse.png" alt="Apocalypse">
+                    <div class="cardparceiro-info">
+                        <h3>Apocalypse (Temp. 1 / Temp. 2)</h3>
+                        <p>Criador de Mod + Criador de Modpack</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/delirium_kimera.png" alt="Delirium Kimera">
+                    <div class="cardparceiro-info">
+                        <h3>Delirium Kimera (2026)</h3>
+                        <p>Criador de Mod</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/dimensional_world.png" alt="Dimensional World">
+                    <div class="cardparceiro-info">
+                        <h3>Dimensional World (2026)</h3>
+                        <p>Criador de Mod + Otimizador de Modpack</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/squid_game.png" alt="Squid Game">
+                    <div class="cardparceiro-info">
+                        <h3>Squid Game (2025)</h3>
+                        <p>Criador de Mod</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/aletheia.png" alt="Aletheia">
+                    <div class="cardparceiro-info">
+                        <h3>Aletheia (2025)</h3>
+                        <p>Criador de Mod + Otimizador de Modpack</p>
+                    </div>
+                </div>
+                <div class="cardparceiro">
+                    <img src="img/parceiros/equinox.png" alt="Equinox">
+                    <div class="cardparceiro-info">
+                        <h3>Equinox (2025)</h3>
+                        <p>Criador de Mod + Otimizador de Modpack</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="criacoes escondido">
+                <h1 class="titulocriacoes" data-text="CRIAÇÕES">CRIAÇÕES</h1>
+
+                <div class="criacoes-toolbar">
+                    <div class="criacoes-busca">
+                        <input type="text" id="criacoesBusca" placeholder="Buscar nos posts...">
+                    </div>
+                    <div class="criacoes-controles">
+                        <select id="criacoesFiltro">
+                            <option value="todos">Todas as tags</option>
+                            <option value="mods">Mods</option>
+                            <option value="modpacks">Modpacks</option>
+                            <option value="plugins">Plugins</option>
+                            <option value="datapacks">Datapacks</option>
+                            <option value="ports">Ports</option>
+                            <option value="pixelart">Pixel Art</option>
+                            <option value="modelo">Modelo</option>
+                            <option value="wip">Trabalho em progresso</option>
+                        </select>
+                        <select id="criacoesFiltroOrigem">
+                            <option value="todos">Toda origem</option>
+                            <option value="comissao">Feitos para comissão</option>
+                            <option value="proprio">Feitos por mim</option>
+                        </select>
+                        <select id="criacoesOrdem">
+                            <option value="recente">Mais recentes</option>
+                            <option value="antigo">Mais antigos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="criacoes-feed" id="criacoesFeed"></div>
+
+                <aside class="criacoes-sugestoes">
+                    <div class="criacoes-sugestoes-sticky">
+                        <h3 class="sugestoes-titulo">Servidores em que já atuei</h3>
+                        <div class="sugestoes-lista" id="sugestoesLista"></div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="postscriacoes">
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

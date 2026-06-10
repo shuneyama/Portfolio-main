@@ -1,0 +1,22 @@
+{
+  "servidores": [
+    {
+      "id": "aelysium",
+      "nome": "Aelysium SMP",
+      "icone": "img/parceiros/aelysium.png",
+      "descricao": "Fundador",
+      "discord": "https://discord.com/invite/yJ2fH4knfu",
+      "twitter": "https://x.com/aelysiumsmp",
+      "tiktok": "https://www.tiktok.com/@aelysiumsmp"
+    },
+    {
+      "id": "equinox",
+      "nome": "Equinox SMP",
+      "icone": "img/parceiros/equinox.png",
+      "descricao": "Staff Técnica",
+      "discord": "https://discord.gg/N8zRSjb8Pf",
+      "twitter": "https://x.com/equinoxsmp_",
+      "tiktok": "https://www.tiktok.com/@equinoxsmp_"
+    }
+  ]
+}

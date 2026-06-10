@@ -1,0 +1,83 @@
+{
+  // Identificador único do post — usado pra curtidas, link compartilhável e modal.
+  // Use um formato consistente, ex: "post-001", "post-002", etc.
+  // Não pode ter espaços nem caracteres especiais.
+  "id": "post-exemplo-completo",
+
+  // Data e hora da publicação (ISO 8601: YYYY-MM-DDTHH:MM:SS)
+  // É usada pra mostrar "agora", "5min", "3h", "2d" no card,
+  // e pra ordenar os posts (mais recentes / mais antigos).
+  "data": "2026-06-09T15:30:00",
+
+  // Título principal do post (aparece em destaque, fonte serif).
+  // Pode usar emojis e símbolos (✦, ★, ♡, ❀, etc).
+  "titulo": "✦ Título do Post",
+
+  // Texto do post (opcional — pode deixar vazio "" se quiser só imagem).
+  // - Use \n pra quebra de linha
+  // - URLs viram links clicáveis automaticamente
+  // - NÃO suporta markdown (**, *, etc) — texto puro mesmo
+  "conteudo": "Aqui vai o texto principal do post.\n\nQuebras de linha funcionam normalmente (use \\n).\n\nLinks dentro do texto viram clicáveis automaticamente, exemplo: https://github.com/shune\n\nVocê pode escrever vários parágrafos, mencionar coisas, fazer reflexões — tudo aqui.",
+
+  // Tags do post (array — pode ter quantas quiser, mas 1-3 é o ideal visualmente).
+  // Tags disponíveis com cores definidas:
+  //   "mods"      → laranja
+  //   "modpacks"  → roxo
+  //   "plugins"   → azul
+  //   "datapacks" → amarelo
+  //   "ports"     → verde
+  //   "pixelart"  → rosa
+  //   "modelo"    → ciano
+  //   "wip"       → dourado (Trabalho em Progresso)
+  // Se deixar [] vazio, nenhuma tag aparece.
+  // Essas tags são filtráveis pelo dropdown "Todas as tags".
+  "tags": ["mods", "wip"],
+
+  // Origem do post (opcional — pode omitir esse campo).
+  // Aparece como uma tag extra junto com as outras.
+  //   "comissao" → "feito para comissão" (cor roxa)
+  //   "proprio"  → "feito por mim"      (cor verde)
+  // Filtrável pelo dropdown "Toda origem".
+  "origem": "comissao",
+
+  // Link externo (opcional — pode omitir ou deixar "").
+  // Vira um card clicável estilo Discord, com borda azul à esquerda.
+  // Mostra o domínio (ex: github.com) em destaque e a URL completa embaixo.
+  "link": "https://github.com/usuario/repositorio",
+
+  // Anexos do post (máximo 4, se passar disso o resto é ignorado).
+  // Tipos aceitos:
+  //   "imagem"  → renderiza <img> (clicável pra abrir em tela cheia)
+  //   "gif"     → mesma coisa que imagem
+  //   "video"   → renderiza <video> com controles nativos
+  //   "audio"   → renderiza <audio> com controles nativos
+  //   "arquivo" → vira um link de download (precisa do campo "nome")
+  // O grid se adapta sozinho: 1 anexo = 1 coluna, 2 = 2 cols, 3 = 3 cols, 4 = 2x2
+  "anexos": [
+    { "tipo": "imagem", "url": "img/criacoes/exemplo-1.png" },
+    { "tipo": "gif", "url": "img/criacoes/exemplo-2.gif" },
+    { "tipo": "video", "url": "img/criacoes/exemplo-3.mp4" },
+    { "tipo": "audio", "url": "img/criacoes/exemplo-4.mp3" }
+  ]
+
+  // EXEMPLO de anexo do tipo "arquivo" (não está incluído acima):
+  // { "tipo": "arquivo", "url": "files/meu-mod.jar", "nome": "Meu Mod v1.0 (2MB)" }
+  // O campo "nome" é o que aparece no botão de download.
+}
+
+
+    {
+        "id": "post-004",
+        "data": "2026-06-09T03:30:00",
+        "titulo": "✦ Título do Post",
+        "conteudo": "Aqui vai o texto principal do post.\n\nQuebras de linha funcionam normalmente (use \\n).\n\nLinks dentro do texto viram clicáveis automaticamente, exemplo: https://github.com/shune\n\nVocê pode escrever vários parágrafos, mencionar coisas, fazer reflexões — tudo aqui.",
+        "tags": ["mods", "modpacks", "plugins", "datapacks", "ports", "pixelart", "modelo", "wip"],
+        "origem": "comissao",
+        "link": "https://github.com/usuario/repositorio",
+        "anexos": [
+            { "tipo": "imagem", "url": "img/criacoes/exemplo-1.png" },
+            { "tipo": "gif", "url": "img/criacoes/exemplo-2.gif" },
+            { "tipo": "video", "url": "img/criacoes/exemplo-3.mp4" },
+            { "tipo": "audio", "url": "img/criacoes/exemplo-4.mp3" }
+        ]
+    },
