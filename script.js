@@ -204,7 +204,7 @@ function renderizarMiniPosts() {
     container.querySelectorAll('.mini-post-card').forEach(card => {
         card.addEventListener('click', () => abrirModalPost(card.dataset.postId));
     });
-    container.querySelector('.postscriacoes-vermais').addEventListener('click', () => trocarModo('criacoes'));
+    container.querySelector('.postscriacoes-vermais').addEventListener('click', () => { trocarModo('criacoes'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 }
 
 async function carregarPosts() {
