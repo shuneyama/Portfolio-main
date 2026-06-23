@@ -499,6 +499,159 @@ main {
     text-align: center;
 }
 
+.lista-espera-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #aaaaaa;
+    font-family: sans-serif;
+    font-size: 11px;
+    padding: 8px 4px;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.lista-espera-btn:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.05);
+}
+
+.lista-espera-btn.ativo {
+    color: #ffffff;
+    background: rgba(255,255,255,0.07);
+}
+
+.lista-espera-painel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.lista-espera-painel.aberto {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.lista-espera-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.lista-espera-cabecalho span {
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #cccccc;
+}
+
+.lista-espera-secoes {
+    display: flex;
+    gap: 30px;
+}
+
+.lista-espera-secao {
+    flex: 1;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.lista-espera-secao-titulo {
+    font-family: sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.lista-espera-secao-titulo.andamento {
+    color: #4caf77;
+}
+
+.lista-espera-secao-titulo.aguardando {
+    color: #f0a040;
+}
+
+.lista-espera-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.lista-espera-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.lista-espera-item-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.lista-espera-item-dot.andamento {
+    background: #4caf77;
+}
+
+.lista-espera-item-dot.aguardando {
+    background: #f0a040;
+}
+
+.lista-espera-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lista-espera-item-nome {
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #dddddd;
+    font-weight: bold;
+}
+
+.lista-espera-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.lista-espera-tag {
+    background: rgba(255,255,255,0.1);
+    color: #aaaaaa;
+    font-family: sans-serif;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.lista-espera-vazia {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #666666;
+    font-style: italic;
+    padding: 8px 0;
+}
+
 .postscriacoes {
     display: flex;
     align-items: center;

@@ -576,6 +576,81 @@ document.getElementById('modalImagem').addEventListener('click', (e) => {
 document.querySelectorAll('.fotomods img').forEach(img => {
     img.addEventListener('click', () => abrirImagem(img.src));
 });
+
+let listaEsperaData = null;
+let tipoAbertoAtual = null;
+
+const nomesTipo = {
+    mods: '🧡 Mods',
+    modpacks: '💜 Modpacks',
+    datapacks: '💛 Datapacks / Plugins'
+};
+
+fetch('lista-espera.json')
+    .then(r => r.json())
+    .then(data => { listaEsperaData = data; });
+
+function renderizarListaEspera(tipo) {
+    const dados = listaEsperaData[tipo];
+    const painel = document.getElementById('listaEsperaPainel');
+    const conteudo = document.getElementById('listaEsperaConteudo');
+
+    function itemHTML(item, classe) {
+        const tags = (item.tags || []).map(t => `<span class="lista-espera-tag">${t}</span>`).join('');
+        return `
+            <div class="lista-espera-item">
+                <div class="lista-espera-item-dot ${classe}"></div>
+                <div class="lista-espera-item-info">
+                    <span class="lista-espera-item-nome">${item.nome}</span>
+                    ${tags ? `<div class="lista-espera-item-tags">${tags}</div>` : ''}
+                </div>
+            </div>`;
+    }
+
+    const andamentoHTML = dados.em_andamento.length
+        ? dados.em_andamento.map(i => itemHTML(i, 'andamento')).join('')
+        : `<div class="lista-espera-vazia">Nenhuma no momento</div>`;
+
+    const aguardandoHTML = dados.aguardando.length
+        ? dados.aguardando.map(i => itemHTML(i, 'aguardando')).join('')
+        : `<div class="lista-espera-vazia">Nenhuma no momento</div>`;
+
+    conteudo.innerHTML = `
+        <div class="lista-espera-cabecalho">
+            <span>Lista de espera — ${nomesTipo[tipo]}</span>
+        </div>
+        <div class="lista-espera-secoes">
+            <div class="lista-espera-secao">
+                <div class="lista-espera-secao-titulo andamento">▶ Em andamento</div>
+                ${andamentoHTML}
+            </div>
+            <div class="lista-espera-secao">
+                <div class="lista-espera-secao-titulo aguardando">⏳ Aguardando</div>
+                ${aguardandoHTML}
+            </div>
+        </div>`;
+
+    painel.classList.add('aberto');
+}
+
+document.querySelectorAll('.lista-espera-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (!listaEsperaData) return;
+        const tipo = btn.dataset.tipo;
+        const painel = document.getElementById('listaEsperaPainel');
+
+        document.querySelectorAll('.lista-espera-btn').forEach(b => b.classList.remove('ativo'));
+
+        if (tipoAbertoAtual === tipo) {
+            painel.classList.remove('aberto');
+            tipoAbertoAtual = null;
+        } else {
+            btn.classList.add('ativo');
+            tipoAbertoAtual = tipo;
+            renderizarListaEspera(tipo);
+        }
+    });
+});
 document.getElementById('modalPost').addEventListener('click', (e) => {
     if (e.target.id === 'modalPost') fecharModalPost();
 });
