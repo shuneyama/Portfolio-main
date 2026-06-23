@@ -426,7 +426,6 @@ function fecharModalPost() {
 function abrirImagem(url) {
     document.getElementById('modalImagemSrc').src = url;
     document.getElementById('modalImagem').classList.remove('escondido');
-    document.body.classList.add('sem-scroll');
 }
 
 function verificarPostNaURL() {
