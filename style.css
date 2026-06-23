@@ -831,8 +831,13 @@ body.bg-comissoes .apresentacao {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    object-position: center;
     border-radius: 10px 10px 0 0;
     display: block;
+}
+
+.cardmod img.pos-bottom {
+    object-position: bottom;
 }
 
 .cardmod h3 {
