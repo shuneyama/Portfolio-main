@@ -497,10 +497,25 @@ function abrirImagem(url) {
 
 function verificarPostNaURL() {
     const hash = location.hash;
-    if (hash.startsWith('#post-')) {
-        const id = hash.replace('#post-', '');
-        if (modoAtual !== 'criacoes') trocarModo('criacoes');
-        setTimeout(() => abrirModalPost(id), 600);
+    if (!hash.startsWith('#post-')) return;
+    const id = hash.replace('#post-', '');
+
+    const navegar = () => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => {
+            const card = document.querySelector(`.post-card[data-post-id="${id}"]`);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 500);
+    };
+
+    if (modoAtual !== 'criacoes') {
+        trocarModo('criacoes', false);
+        history.replaceState({ modo: 'criacoes' }, '', '/criacoes');
+        setTimeout(navegar, 600);
+    } else {
+        navegar();
     }
 }
 
