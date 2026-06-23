@@ -384,27 +384,29 @@ main {
 
 .modsheader {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
     width: 100%;
 }
 
 .fotomods {
-    flex: 0 0 320px;
+    flex: 0 0 420px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
 .fotomods img {
     width: 100%;
     height: auto;
-    max-width: 320px;
+    max-width: 420px;
     display: block;
+    border-radius: 8px;
 }
 
 .textomods {
     flex: 1 1 auto;
+    max-width: 620px;
     color: #cccccc;
     line-height: 1.8;
     text-align: justify;
