@@ -581,9 +581,9 @@ let listaEsperaData = null;
 let tipoAbertoAtual = null;
 
 const nomesTipo = {
-    mods: '🧡 Mods',
-    modpacks: '💜 Modpacks',
-    datapacks: '💛 Datapacks / Plugins'
+    mods: 'Mods',
+    modpacks: 'Modpacks',
+    datapacks: 'Datapacks / Plugins'
 };
 
 fetch('lista-espera.json')
@@ -617,7 +617,7 @@ function renderizarListaEspera(tipo) {
 
     conteudo.innerHTML = `
         <div class="lista-espera-cabecalho">
-            <span>Lista de espera — ${nomesTipo[tipo]}</span>
+            <span>Lista de espera ⊱⋆⊰ ${nomesTipo[tipo]}</span>
         </div>
         <div class="lista-espera-secoes">
             <div class="lista-espera-secao">
@@ -625,7 +625,7 @@ function renderizarListaEspera(tipo) {
                 ${andamentoHTML}
             </div>
             <div class="lista-espera-secao">
-                <div class="lista-espera-secao-titulo aguardando">⏳ Aguardando</div>
+                <div class="lista-espera-secao-titulo aguardando">▶ Aguardando</div>
                 ${aguardandoHTML}
             </div>
         </div>`;
