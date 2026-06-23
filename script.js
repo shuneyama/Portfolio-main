@@ -198,11 +198,13 @@ function renderizarMiniPosts() {
 
     container.innerHTML = `
         <div class="postscriacoes-titulo">Ultimas Criacoes</div>
-        <div class="postscriacoes-cards">${cardsHTML}</div>`;
+        <div class="postscriacoes-cards">${cardsHTML}</div>
+        <button class="postscriacoes-vermais">ver mais criacoes</button>`;
 
     container.querySelectorAll('.mini-post-card').forEach(card => {
         card.addEventListener('click', () => abrirModalPost(card.dataset.postId));
     });
+    container.querySelector('.postscriacoes-vermais').addEventListener('click', () => trocarModo('criacoes'));
 }
 
 async function carregarPosts() {
