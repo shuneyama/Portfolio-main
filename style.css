@@ -298,8 +298,8 @@ main {
 .fotoapresentacao img {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 480px;
     max-width: 300px;
     display: block;
     border-radius: 8px;
