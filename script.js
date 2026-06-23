@@ -424,11 +424,9 @@ function fecharModalPost() {
 }
 
 function abrirImagem(url) {
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     document.getElementById('modalImagemSrc').src = url;
     document.getElementById('modalImagem').classList.remove('escondido');
     document.body.classList.add('sem-scroll');
-    document.body.style.paddingRight = scrollbarWidth + 'px';
 }
 
 function verificarPostNaURL() {
@@ -483,7 +481,6 @@ function fecharModalImagem() {
         modal.style.animation = '';
         if (document.getElementById('modalPost').classList.contains('escondido')) {
             document.body.classList.remove('sem-scroll');
-            document.body.style.paddingRight = '';
         }
     }, 200);
 }
