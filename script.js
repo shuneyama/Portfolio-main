@@ -613,7 +613,7 @@ document.getElementById('modalImagemFechar').addEventListener('click', fecharMod
 document.getElementById('modalImagem').addEventListener('click', (e) => {
     if (e.target.id === 'modalImagem') fecharModalImagem();
 });
-document.querySelectorAll('.fotomods img').forEach(img => {
+document.querySelectorAll('.fotomods img, .cardmod img').forEach(img => {
     img.addEventListener('click', () => abrirImagem(img.src));
 });
 
