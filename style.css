@@ -382,6 +382,23 @@ main {
     width: 100%;
 }
 
+.conteudodatapacks,
+.conteudomods,
+.conteudomodpacks,
+.conteudoplugins,
+.conteudoports,
+.conteudoextras {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.titulo-comissao {
+    text-align: center;
+    width: 100%;
+}
+
 .modsheader {
     display: flex;
     align-items: flex-start;
@@ -644,6 +661,7 @@ body.bg-parceiros .fundo-parceiros {
 .textoapresentacao h1,
 .conteudoprecos h1,
 .textomods h1,
+.titulo-comissao,
 .conteudotermos h1,
 .tituloparceiros,
 .titulotermos,
@@ -665,6 +683,8 @@ body.bg-parceiros .fundo-parceiros {
 .conteudoprecos h1::after,
 .textomods h1::before,
 .textomods h1::after,
+.titulo-comissao::before,
+.titulo-comissao::after,
 .conteudotermos h1::before,
 .conteudotermos h1::after,
 .tituloparceiros::before,
@@ -685,6 +705,7 @@ body.bg-parceiros .fundo-parceiros {
 .textoapresentacao h1::before,
 .conteudoprecos h1::before,
 .textomods h1::before,
+.titulo-comissao::before,
 .conteudotermos h1::before,
 .tituloparceiros::before,
 .titulotermos::before,
@@ -698,6 +719,7 @@ body.bg-parceiros .fundo-parceiros {
 .textoapresentacao h1::after,
 .conteudoprecos h1::after,
 .textomods h1::after,
+.titulo-comissao::after,
 .conteudotermos h1::after,
 .tituloparceiros::after,
 .titulotermos::after,
