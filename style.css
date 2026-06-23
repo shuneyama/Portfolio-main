@@ -453,7 +453,6 @@ main {
 
 .textomods {
     flex: 1 1 auto;
-    max-width: 620px;
     color: #cccccc;
     line-height: 1.8;
     text-align: justify;
