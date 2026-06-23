@@ -338,41 +338,56 @@ main {
 
 .conteudoprecos {
     width: 100%;
-    color: #880000;
-    text-shadow: 2px 2px 5px #aa0000;
+    color: #cccccc;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     font-family: sans-serif;
     line-height: 1.5;
 }
 
-.precoitem {
-    margin-bottom: 30px;
-    padding-left: 30px;
+.precosgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 85%;
+    margin: 0 auto;
 }
 
-.precoitem:last-child {
+.precoitem {
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 28px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 0;
 }
 
 .precoitem h2 {
-    margin-bottom: 12px;
-    color: #b41a1a;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .precoitem p {
     position: relative;
-    padding-left: 50px;
+    padding-left: 20px;
     margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #aaaaaa;
 }
 
 .precoitem p::before {
-    content: "⋆˚꩜｡";
+    content: "▶";
     position: absolute;
     left: 0;
-    top: 0.15em;
-    color: #b41a1a;
-    font-weight: bold;
-    font-size: 16px;
-    opacity: 0.95;
+    top: 0.1em;
+    color: #888888;
+    font-size: 10px;
+    opacity: 0.8;
 }
 
 .conteudomods {
@@ -995,21 +1010,22 @@ body.bg-parceiros .fundo-parceiros {
 }
 
 .termoscard {
-    background-color: rgba(0, 0, 0, 0.50);
-    border: 2px solid #555555;
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 30px;
-    color: #ffffff;
+    color: #cccccc;
     font-family: sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .termoscard h2 {
     font-family: sans-serif;
-    font-size: 22px;
-    margin-bottom: 25px;
+    font-size: 18px;
+    margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 1px solid #999999;
-    color: #999999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -1023,27 +1039,27 @@ body.bg-parceiros .fundo-parceiros {
 
 .termositem h3 {
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
-    color: #999999;
-    margin-bottom: 6px;
+    color: #dddddd;
+    margin-bottom: 5px;
 }
 
 .termositem p {
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
-    color: #777777;
+    color: #aaaaaa;
     font-weight: 300;
 }
 
 .termosaviso {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px dashed #888888;
-    font-size: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    font-size: 14px;
     font-style: italic;
-    color: #555555;
+    color: #888888;
     font-weight: 300;
 }
 
