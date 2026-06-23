@@ -471,10 +471,18 @@ function iniciarSugestoes() {
 }
 
 function fecharModalImagem() {
-    document.getElementById('modalImagem').classList.add('escondido');
-    if (document.getElementById('modalPost').classList.contains('escondido')) {
-        document.body.classList.remove('sem-scroll');
-    }
+    const modal = document.getElementById('modalImagem');
+    const img = document.getElementById('modalImagemSrc');
+    img.style.animation = 'modalZoomOut 0.2s ease forwards';
+    modal.style.animation = 'modalFadeOut 0.2s ease forwards';
+    setTimeout(() => {
+        modal.classList.add('escondido');
+        img.style.animation = '';
+        modal.style.animation = '';
+        if (document.getElementById('modalPost').classList.contains('escondido')) {
+            document.body.classList.remove('sem-scroll');
+        }
+    }, 200);
 }
 
 const stickyEl = document.querySelector('.criacoes-sugestoes-sticky');
@@ -565,6 +573,9 @@ document.getElementById('criacoesOrdem').addEventListener('change', renderizarPo
 document.getElementById('modalImagemFechar').addEventListener('click', fecharModalImagem);
 document.getElementById('modalImagem').addEventListener('click', (e) => {
     if (e.target.id === 'modalImagem') fecharModalImagem();
+});
+document.querySelectorAll('.fotomods img').forEach(img => {
+    img.addEventListener('click', () => abrirImagem(img.src));
 });
 document.getElementById('modalPost').addEventListener('click', (e) => {
     if (e.target.id === 'modalPost') fecharModalPost();
