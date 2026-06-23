@@ -505,10 +505,11 @@ function verificarPostNaURL() {
         window.scrollTo({ top: 0, behavior: 'instant' });
         setTimeout(() => {
             const card = document.querySelector(`.post-card[data-post-id="${id}"]`);
-            if (card) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                setTimeout(() => abrirModalPost(id), 1500);
-            }
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
+            const scrollTop = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+            window.scrollTo({ top: Math.max(0, scrollTop), behavior: 'smooth' });
+            setTimeout(() => abrirModalPost(id), 1500);
         }, 1500);
     };
 
