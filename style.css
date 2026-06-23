@@ -331,7 +331,13 @@ main {
     transform-origin: center center;
 }
 
-.apresentacao.modo-precos {
+.apresentacao.modo-precos,
+.apresentacao.modo-datapacks,
+.apresentacao.modo-mods,
+.apresentacao.modo-modpacks,
+.apresentacao.modo-plugins,
+.apresentacao.modo-ports,
+.apresentacao.modo-extras {
     flex-direction: column;
     align-items: stretch;
     padding-top: 80px;
