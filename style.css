@@ -951,9 +951,9 @@ body.bg-parceiros .fundo-parceiros {
 }
 
 .post-titulo {
-    font-family: 'Press Start 2P', 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: bold;
     color: #ffffff;
     margin-bottom: 8px;
     line-height: 1.3;
