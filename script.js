@@ -417,7 +417,7 @@ function curtir(id) {
 }
 
 function copiarLink(id) {
-    const url = `${location.origin}${location.pathname}#post-${id}`;
+    const url = `${location.origin}/criacoes#${id}`;
     navigator.clipboard.writeText(url).then(() => {
         const toast = document.getElementById('toastCopiado');
         toast.classList.remove('escondido');
@@ -498,7 +498,7 @@ function abrirImagem(url) {
 function verificarPostNaURL() {
     const hash = location.hash;
     if (!hash.startsWith('#post-')) return;
-    const id = hash.replace('#post-', '');
+    const id = hash.slice(1);
 
     const navegar = () => {
         window.scrollTo({ top: 0, behavior: 'instant' });
@@ -513,7 +513,7 @@ function verificarPostNaURL() {
 
     if (modoAtual !== 'criacoes') {
         trocarModo('criacoes', false);
-        history.replaceState({ modo: 'criacoes' }, '', '/criacoes');
+        history.replaceState({ modo: 'criacoes' }, '', '/criacoes' + location.hash);
         setTimeout(navegar, 600);
     } else {
         navegar();

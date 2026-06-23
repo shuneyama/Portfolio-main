@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <script>
-    sessionStorage.setItem('ghpages-redirect', location.pathname);
+    sessionStorage.setItem('ghpages-redirect', location.pathname + location.hash);
     location.replace('/');
   </script>
 </head>
