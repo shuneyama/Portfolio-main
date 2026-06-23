@@ -1651,15 +1651,15 @@ body.bg-parceiros .fundo-parceiros {
 }
 
 @keyframes modalZoomElastic {
-    0%   { transform: scale(0.3); opacity: 0; }
-    55%  { transform: scale(1.06); opacity: 1; }
-    75%  { transform: scale(0.97); }
+    0%   { transform: scale(0.6); opacity: 0; }
+    55%  { transform: scale(1.03); opacity: 1; }
+    75%  { transform: scale(0.99); }
     100% { transform: scale(1); }
 }
 
 @keyframes modalZoomOut {
     from { transform: scale(1); opacity: 1; }
-    to   { transform: scale(0.3); opacity: 0; }
+    to   { transform: scale(0.75); opacity: 0; }
 }
 
 @keyframes modalFadeOut {
