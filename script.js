@@ -163,6 +163,8 @@ function trocarModo(novoModo, pushHistory = true) {
         voltarTopoBotao.classList.add('escondido');
     }
 
+    modoAtual = novoModo;
+
     setTimeout(() => {
         atual.elementos.forEach(el => {
             el.classList.remove('pop-out');
@@ -183,7 +185,6 @@ function trocarModo(novoModo, pushHistory = true) {
             voltarTopoBotao.classList.remove('escondido');
         }
 
-        modoAtual = novoModo;
         if (pushHistory) {
             const url = modoParaURL[novoModo] || '/';
             history.pushState({ modo: novoModo }, '', url);
@@ -762,9 +763,9 @@ if (redirectPath) {
 const modoInicial = urlParaModo[location.pathname] || 'inicio';
 if (modoInicial !== 'inicio') {
     trocarModo(modoInicial, false);
-    history.replaceState({ modo: modoInicial }, '', location.pathname);
+    history.replaceState({ modo: modoInicial }, '', location.pathname + location.hash);
 } else {
-    history.replaceState({ modo: 'inicio' }, '', location.pathname);
+    history.replaceState({ modo: 'inicio' }, '', location.pathname + location.hash);
 }
 
 window.addEventListener('popstate', (e) => {
