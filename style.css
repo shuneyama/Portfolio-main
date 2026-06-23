@@ -837,7 +837,21 @@ body.bg-comissoes .apresentacao {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border-bottom: 2px solid transparent;
 }
+
+.cardmod.tema-blocos      { border-bottom-color: #b5651d; }
+.cardmod.tema-itens       { border-bottom-color: #5bc8c8; }
+.cardmod.tema-musicas     { border-bottom-color: #9b6dbd; }
+.cardmod.tema-receitas    { border-bottom-color: #5aaa5a; }
+.cardmod.tema-armaduras   { border-bottom-color: #aaaaaa; }
+.cardmod.tema-ferramentas { border-bottom-color: #c87941; }
+.cardmod.tema-minerios    { border-bottom-color: #4a9fc4; }
+.cardmod.tema-plantacoes  { border-bottom-color: #6a9e4f; }
+.cardmod.tema-sistemas    { border-bottom-color: #5566cc; }
+.cardmod.tema-ports       { border-bottom-color: #c9a82c; }
+.cardmod.tema-comandos    { border-bottom-color: #c44444; }
+.cardmod.tema-extras      { border-bottom-color: #888888; }
 
 .cardmod img {
     width: 100%;
