@@ -7,6 +7,39 @@
       "conteudo": "Esse é o primeiro post da aba Criações! Aqui vou postar projetos finalizados, prévias, atualizações e tudo mais que envolve meu trabalho.\n\nFiquem ligados!",
       "tags": [],
       "anexos": []
+    },
+    {
+      "id": "post-002",
+      "data": "2026-06-15T14:00:00",
+      "titulo": "Mod de Ports — Aelysium SMP",
+      "conteudo": "Port finalizado para o servidor Aelysium! Versão 1.16 portada para NeoForge 1.21.",
+      "tags": ["mods", "ports"],
+      "origem": "comissao",
+      "anexos": [
+        { "tipo": "imagem", "url": "img/comissoes/shuneports.png" }
+      ]
+    },
+    {
+      "id": "post-003",
+      "data": "2026-06-18T10:00:00",
+      "titulo": "Modpack Leve — Servidor Survival",
+      "conteudo": "Modpack otimizado com 120 mods, rodando tranquilo em 4GB de RAM.",
+      "tags": ["modpacks"],
+      "origem": "comissao",
+      "anexos": [
+        { "tipo": "imagem", "url": "img/comissoes/shunemodpacks.png" }
+      ]
+    },
+    {
+      "id": "post-004",
+      "data": "2026-06-22T18:00:00",
+      "titulo": "Datapack de Origins — Musae Eras",
+      "conteudo": "Addon de Origins com 5 raças customizadas para o SMP Musae Eras 2026.",
+      "tags": ["datapacks"],
+      "origem": "comissao",
+      "anexos": [
+        { "tipo": "imagem", "url": "img/comissoes/shunedatapacks.png" }
+      ]
     }
   ]
 }
