@@ -365,10 +365,10 @@ main {
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #ffffff;
+    color: #b41a1a;
     margin-bottom: 16px;
     padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(180, 26, 26, 0.25);
 }
 
 .precoitem p {
