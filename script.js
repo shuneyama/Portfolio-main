@@ -506,6 +506,7 @@ function verificarPostNaURL() {
             const card = document.querySelector(`.post-card[data-post-id="${id}"]`);
             if (card) {
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => abrirModalPost(id), 500);
             }
         }, 500);
     };
