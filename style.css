@@ -334,6 +334,7 @@ main {
 .apresentacao.modo-precos {
     flex-direction: column;
     align-items: stretch;
+    padding-top: 80px;
 }
 
 .conteudoprecos {
@@ -1082,6 +1083,7 @@ body.bg-parceiros .fundo-parceiros {
 .apresentacao.modo-termos {
     flex-direction: column;
     align-items: stretch;
+    padding-top: 80px;
 }
 
 .criacoes {
