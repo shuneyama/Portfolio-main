@@ -168,12 +168,50 @@ function trocarModo(novoModo) {
 let postsData = [];
 let servidoresData = [];
 
+function renderizarMiniPosts() {
+    const container = document.getElementById('postscriacoes');
+    if (!container) return;
+
+    const comMedia = postsData
+        .filter(p => (p.anexos || []).some(a => ['imagem', 'gif', 'video'].includes(a.tipo)))
+        .sort((a, b) => new Date(b.data) - new Date(a.data))
+        .slice(0, 3);
+
+    if (!comMedia.length) {
+        container.style.display = 'none';
+        return;
+    }
+
+    const cardsHTML = comMedia.map(post => {
+        const media = post.anexos.find(a => ['imagem', 'gif', 'video'].includes(a.tipo));
+        const mediaHTML = media.tipo === 'video'
+            ? `<video src="${media.url}" muted preload="metadata"></video>`
+            : `<img src="${media.url}" alt="">`;
+        return `
+            <div class="mini-post-card" data-post-id="${post.id}">
+                <div class="mini-post-media">${mediaHTML}</div>
+                <div class="mini-post-rodape">
+                    <div class="mini-post-titulo">${post.titulo}</div>
+                </div>
+            </div>`;
+    }).join('');
+
+    container.innerHTML = `
+        <div class="postscriacoes-titulo">Ultimas Criacoes</div>
+        <div class="postscriacoes-cards">${cardsHTML}</div>`;
+
+    container.querySelectorAll('.mini-post-card').forEach(card => {
+        card.addEventListener('click', () => abrirModalPost(card.dataset.postId));
+    });
+}
+
 async function carregarPosts() {
     try {
         const res = await fetch('posts.json');
         const data = await res.json();
         postsData = data.posts;
         renderizarPosts();
+        renderizarMiniPosts();
         verificarPostNaURL();
     } catch (err) {
         document.getElementById('criacoesFeed').innerHTML = '<div class="criacoes-vazio">Erro ao carregar posts.</div>';
