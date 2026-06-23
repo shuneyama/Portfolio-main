@@ -197,9 +197,9 @@ function renderizarMiniPosts() {
     }).join('');
 
     container.innerHTML = `
-        <div class="postscriacoes-titulo">Ultimas Criacoes</div>
+        <div class="postscriacoes-titulo">Últimas Criações</div>
         <div class="postscriacoes-cards">${cardsHTML}</div>
-        <button class="postscriacoes-vermais">ver mais criacoes</button>`;
+        <button class="postscriacoes-vermais">VER MAIS CRIAÇÕES</button>`;
 
     container.querySelectorAll('.mini-post-card').forEach(card => {
         card.addEventListener('click', () => abrirModalPost(card.dataset.postId));
