@@ -120,9 +120,32 @@ botaoParceiros.addEventListener('click', (e) => { e.preventDefault(); trocarModo
 botaoTermos.addEventListener('click', (e) => { e.preventDefault(); trocarModo('termos'); });
 botaoCriacoes.addEventListener('click', (e) => { e.preventDefault(); trocarModo('criacoes'); });
 
+const modoParaURL = {
+    inicio:    '/',
+    precos:    '/precos',
+    termos:    '/termos',
+    criacoes:  '/criacoes',
+    parceiros: '/parceiros',
+    datapacks: '/comissoes',
+    mods:      '/comissoes',
+    modpacks:  '/comissoes',
+    plugins:   '/comissoes',
+    ports:     '/comissoes',
+    extras:    '/comissoes'
+};
+
+const urlParaModo = {
+    '/':          'inicio',
+    '/precos':    'precos',
+    '/termos':    'termos',
+    '/criacoes':  'criacoes',
+    '/parceiros': 'parceiros',
+    '/comissoes': 'mods'
+};
+
 let modoAtual = 'inicio';
 
-function trocarModo(novoModo) {
+function trocarModo(novoModo, pushHistory = true) {
     if (novoModo === modoAtual) return;
 
     const atual = modos[modoAtual];
@@ -161,6 +184,10 @@ function trocarModo(novoModo) {
         }
 
         modoAtual = novoModo;
+        if (pushHistory) {
+            const url = modoParaURL[novoModo] || '/';
+            history.pushState({ modo: novoModo }, '', url);
+        }
         fitToScreen();
     }, 500);
 }
@@ -709,6 +736,25 @@ document.addEventListener('keydown', (e) => {
 
 carregarPosts();
 carregarServidores();
+
+const redirectPath = sessionStorage.getItem('ghpages-redirect');
+if (redirectPath) {
+    sessionStorage.removeItem('ghpages-redirect');
+    history.replaceState(null, '', redirectPath);
+}
+
+const modoInicial = urlParaModo[location.pathname] || 'inicio';
+if (modoInicial !== 'inicio') {
+    trocarModo(modoInicial, false);
+    history.replaceState({ modo: modoInicial }, '', location.pathname);
+} else {
+    history.replaceState({ modo: 'inicio' }, '', location.pathname);
+}
+
+window.addEventListener('popstate', (e) => {
+    const modo = e.state?.modo || urlParaModo[location.pathname] || 'inicio';
+    trocarModo(modo, false);
+});
 
 const skins = [
     'img/skins/shune1.png',
