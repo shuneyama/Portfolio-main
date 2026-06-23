@@ -840,6 +840,10 @@ body.bg-comissoes .apresentacao {
     object-position: bottom;
 }
 
+.cardmod img.pos-top {
+    object-position: top;
+}
+
 .cardmod h3 {
     font-family: 'Press Start 2P', 'Courier New', monospace;
     font-size: 14px;
