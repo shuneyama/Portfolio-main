@@ -24,22 +24,6 @@
           "url": "img/comissoes/shuneports.png"
         }
       ]
-    },
-    {
-      "id": "post-003",
-      "data": "2026-06-18T10:00:00",
-      "titulo": "Modpack Leve — Servidor Survival",
-      "conteudo": "Modpack otimizado com 120 mods, rodando tranquilo em 4GB de RAM.",
-      "tags": [
-        "modpacks"
-      ],
-      "origem": "comissao",
-      "anexos": [
-        {
-          "tipo": "imagem",
-          "url": "img/comissoes/shunemodpacks.png"
-        }
-      ]
     }
   ]
 }
