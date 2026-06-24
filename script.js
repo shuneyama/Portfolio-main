@@ -211,6 +211,7 @@ function trocarModo(novoModo, pushHistory = true) {
 
 let postsData = [];
 let servidoresData = [];
+let likesData = {};
 
 function renderizarMiniPosts() {
     const container = document.getElementById('postscriacoes');
@@ -265,10 +266,17 @@ async function carregarTags() {
     } catch {}
 }
 
+async function carregarLikes() {
+    try {
+        const res = await fetch('https://admin.shuneyama.com/api/likes');
+        likesData = await res.json();
+    } catch { likesData = {}; }
+}
+
 async function carregarPosts() {
     try {
-        const res = await fetch('posts.json');
-        const data = await res.json();
+        const [postsRes] = await Promise.all([fetch('posts.json'), carregarLikes()]);
+        const data = await postsRes.json();
         postsData = data.posts;
         renderizarPosts();
         renderizarMiniPosts();
@@ -334,7 +342,7 @@ function renderizarLinkPreview(url) {
 }
 
 function gerarPostHTML(post, dentroModal = false) {
-    const curtidas = parseInt(localStorage.getItem(`curtidas_${post.id}`) || '0');
+    const curtidas = likesData[post.id] || 0;
     const curtido = localStorage.getItem(`curtido_${post.id}`) === '1';
     const anexos = (post.anexos || []).slice(0, 4);
     const tagsHTML = (post.tags || []).map(t => `<span class="post-tag ${t}">${t}</span>`).join('');
@@ -430,21 +438,26 @@ function renderizarPosts() {
 
 function curtir(id) {
     const curtido = localStorage.getItem(`curtido_${id}`) === '1';
-    let curtidas = parseInt(localStorage.getItem(`curtidas_${id}`) || '0');
-    if (curtido) {
-        curtidas = Math.max(0, curtidas - 1);
-        localStorage.setItem(`curtido_${id}`, '0');
-    } else {
-        curtidas++;
-        localStorage.setItem(`curtido_${id}`, '1');
-    }
-    localStorage.setItem(`curtidas_${id}`, curtidas);
+    const delta = curtido ? -1 : 1;
+    localStorage.setItem(`curtido_${id}`, curtido ? '0' : '1');
+    likesData[id] = Math.max(0, (likesData[id] || 0) + delta);
     renderizarPosts();
     const modal = document.getElementById('modalPost');
     if (!modal.classList.contains('escondido')) {
         const postAberto = modal.dataset.postId;
         if (postAberto) atualizarModalPost(postAberto);
     }
+    fetch('https://admin.shuneyama.com/api/likes/' + id, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ delta })
+    }).then(r => r.json()).then(d => {
+        if (typeof d.likes === 'number') {
+            likesData[id] = d.likes;
+            renderizarPosts();
+            if (!modal.classList.contains('escondido') && modal.dataset.postId === id) atualizarModalPost(id);
+        }
+    }).catch(() => {});
 }
 
 function copiarLink(id) {
