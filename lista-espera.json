@@ -1,11 +1,7 @@
 {
   "mods": {
-    "em_andamento": [
-      { "nome": "Exemplo de comissão ativa", "tags": ["forge", "1.20"] }
-    ],
-    "aguardando": [
-      { "nome": "Exemplo de comissão em fila", "tags": ["fabric", "1.21"] }
-    ]
+    "em_andamento": [],
+    "aguardando": []
   },
   "modpacks": {
     "em_andamento": [],
