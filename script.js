@@ -432,7 +432,7 @@ function curtir(id) {
 }
 
 function copiarLink(id) {
-    const url = `${location.origin}/criacoes#${id}`;
+    const url = `${location.origin}/p/${id}`;
     navigator.clipboard.writeText(url).then(() => {
         const toast = document.getElementById('toastCopiado');
         toast.classList.remove('escondido');
@@ -687,7 +687,19 @@ const nomesTipo = {
 
 fetch('lista-espera.json')
     .then(r => r.json())
-    .then(data => { listaEsperaData = data; });
+    .then(data => {
+        listaEsperaData = data;
+        const capacidade = data.capacidade || {};
+        ['mods', 'modpacks', 'datapacks'].forEach(tipo => {
+            const cat = data[tipo] || {};
+            const total = (cat.em_andamento || []).length + (cat.aguardando || []).length;
+            const max = capacidade[tipo] || 10;
+            const el = document.getElementById('status-' + tipo);
+            if (!el) return;
+            const label = tipo === 'datapacks' ? 'Datapacks/Plugins' : tipo.charAt(0).toUpperCase() + tipo.slice(1);
+            el.textContent = label + ': ' + total + '/' + max;
+        });
+    });
 
 function renderizarListaEspera(tipo) {
     const dados = listaEsperaData[tipo];
