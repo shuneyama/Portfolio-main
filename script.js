@@ -145,6 +145,22 @@ const urlParaModo = {
 
 let modoAtual = 'inicio';
 
+function setModoImediato(novoModo) {
+    const atual = modos[modoAtual];
+    const proximo = modos[novoModo];
+    if (!proximo) return;
+    if (atual.bg) document.body.classList.remove(atual.bg);
+    if (atual.classe) apresentacao.classList.remove(atual.classe);
+    if (atual.esconderApresentacao) apresentacao.classList.remove('escondido');
+    atual.elementos.forEach(el => { el.classList.add('escondido'); el.classList.remove('slide-in', 'pop-out'); });
+    if (proximo.bg) document.body.classList.add(proximo.bg);
+    if (proximo.classe) apresentacao.classList.add(proximo.classe);
+    if (proximo.esconderApresentacao) apresentacao.classList.add('escondido');
+    proximo.elementos.forEach(el => { el.classList.remove('escondido', 'pop-out'); el.classList.add('slide-in'); });
+    if (novoModo === 'criacoes') voltarTopoBotao.classList.remove('escondido');
+    modoAtual = novoModo;
+}
+
 function trocarModo(novoModo, pushHistory = true) {
     if (novoModo === modoAtual) return;
 
@@ -790,7 +806,7 @@ if (redirectPath) {
 
 const modoInicial = urlParaModo[location.pathname] || 'inicio';
 if (modoInicial !== 'inicio') {
-    trocarModo(modoInicial, false);
+    setModoImediato(modoInicial);
     history.replaceState({ modo: modoInicial }, '', location.pathname + location.hash);
 } else {
     history.replaceState({ modo: 'inicio' }, '', location.pathname + location.hash);
