@@ -7,23 +7,6 @@
       "conteudo": "Esse é o primeiro post da aba Criações! Aqui vou postar projetos finalizados, prévias, atualizações e tudo mais que envolve meu trabalho.\n\nFiquem ligados!",
       "tags": [],
       "anexos": []
-    },
-    {
-      "id": "post-002",
-      "data": "2026-06-15T14:00:00",
-      "titulo": "Mod de Ports — Aelysium SMP",
-      "conteudo": "Port finalizado para o servidor Aelysium! Versão 1.16 portada para NeoForge 1.21.",
-      "tags": [
-        "mods",
-        "ports"
-      ],
-      "origem": "comissao",
-      "anexos": [
-        {
-          "tipo": "imagem",
-          "url": "img/comissoes/shuneports.png"
-        }
-      ]
     }
   ]
 }
