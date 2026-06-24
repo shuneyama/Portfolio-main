@@ -1,0 +1,10 @@
+[
+  { "value": "mods", "label": "Mods" },
+  { "value": "modpacks", "label": "Modpacks" },
+  { "value": "plugins", "label": "Plugins" },
+  { "value": "datapacks", "label": "Datapacks" },
+  { "value": "ports", "label": "Ports" },
+  { "value": "pixelart", "label": "Pixel Art" },
+  { "value": "modelo", "label": "Modelo" },
+  { "value": "wip", "label": "Trabalho em progresso" }
+]

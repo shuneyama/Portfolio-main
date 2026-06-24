@@ -235,6 +235,20 @@ function renderizarMiniPosts() {
     container.querySelector('.postscriacoes-vermais').addEventListener('click', () => { trocarModo('criacoes'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 }
 
+async function carregarTags() {
+    try {
+        const res = await fetch('tags.json');
+        const tags = await res.json();
+        const select = document.getElementById('criacoesFiltro');
+        tags.forEach(tag => {
+            const opt = document.createElement('option');
+            opt.value = tag.value;
+            opt.textContent = tag.label;
+            select.appendChild(opt);
+        });
+    } catch {}
+}
+
 async function carregarPosts() {
     try {
         const res = await fetch('posts.json');
@@ -752,6 +766,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+carregarTags();
 carregarPosts();
 carregarServidores();
 
