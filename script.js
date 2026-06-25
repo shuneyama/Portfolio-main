@@ -806,6 +806,12 @@ document.querySelectorAll('.lista-espera-btn').forEach(btn => {
         } else {
             btn.classList.add('ativo');
             tipoAbertoAtual = tipo;
+
+            if (window.innerWidth <= 768) {
+                const card = btn.closest('.cardstatus');
+                if (card) card.insertAdjacentElement('afterend', painel);
+            }
+
             renderizarListaEspera(tipo);
         }
     });

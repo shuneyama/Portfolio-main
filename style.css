@@ -1790,7 +1790,7 @@ html:has(body.sem-scroll) {
 /* ── Base: elementos exclusivos do mobile ficam ocultos no desktop ── */
 .menu-hamburger { display: none; }
 .menu-mobile { display: none; }
-.nav-mobile-social { display: none; }
+.nav-mobile-socials { display: none; }
 body.sem-scroll { overflow: hidden; }
 
 /* ── MOBILE ─────────────────────────────────── max-width: 768px ── */
@@ -1804,6 +1804,7 @@ body.sem-scroll { overflow: hidden; }
 
     /* Nav: oculta itens desktop, mostra ícones mobile */
     .menus nav {
+        position: relative;
         justify-content: space-between;
         align-items: center;
         padding: 8px 14px;
@@ -1811,11 +1812,19 @@ body.sem-scroll { overflow: hidden; }
     .menu1, .menu2 { display: none !important; }
     .fotomenu {
         display: block !important;
-        position: static !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
         width: 44px !important;
         height: 44px !important;
-        z-index: auto !important;
+        z-index: 5 !important;
         border-radius: 8px;
+    }
+    .nav-mobile-socials {
+        display: flex;
+        align-items: center;
+        gap: 4px;
     }
     .nav-mobile-social {
         display: flex;
