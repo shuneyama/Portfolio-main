@@ -273,11 +273,25 @@ async function carregarLikes() {
     } catch { likesData = {}; }
 }
 
+async function migrarLikesAntigos(posts) {
+    if (localStorage.getItem('likes_migrado') === '1') return;
+    const pendentes = posts.filter(p => localStorage.getItem(`curtido_${p.id}`) === '1');
+    await Promise.all(pendentes.map(p =>
+        fetch('https://admin.shuneyama.com/api/likes/' + p.id, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ delta: 1 })
+        }).then(r => r.json()).then(d => { if (typeof d.likes === 'number') likesData[p.id] = d.likes; }).catch(() => {})
+    ));
+    localStorage.setItem('likes_migrado', '1');
+}
+
 async function carregarPosts() {
     try {
         const [postsRes] = await Promise.all([fetch('posts.json'), carregarLikes()]);
         const data = await postsRes.json();
         postsData = data.posts;
+        await migrarLikesAntigos(postsData);
         renderizarPosts();
         renderizarMiniPosts();
         verificarPostNaURL();
