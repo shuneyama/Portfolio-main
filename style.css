@@ -9,6 +9,7 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: clip;
+    background-color: #080510;
 }
 
 body {
@@ -1789,6 +1790,7 @@ html:has(body.sem-scroll) {
 /* ── Base: elementos exclusivos do mobile ficam ocultos no desktop ── */
 .menu-hamburger { display: none; }
 .menu-mobile { display: none; }
+.nav-mobile-social { display: none; }
 body.sem-scroll { overflow: hidden; }
 
 /* ── MOBILE ─────────────────────────────────── max-width: 768px ── */
@@ -1800,12 +1802,33 @@ body.sem-scroll { overflow: hidden; }
     /* Header */
     .header { height: 100px; }
 
-    /* Nav: oculta itens desktop, mostra hamburger */
+    /* Nav: oculta itens desktop, mostra ícones mobile */
     .menus nav {
-        justify-content: flex-end;
-        padding: 10px 16px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 14px;
     }
-    .menu1, .menu2, .fotomenu { display: none !important; }
+    .menu1, .menu2 { display: none !important; }
+    .fotomenu {
+        display: block !important;
+        position: static !important;
+        width: 44px !important;
+        height: 44px !important;
+        z-index: auto !important;
+        border-radius: 8px;
+    }
+    .nav-mobile-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: #cccccc;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+    .nav-mobile-social:hover { background: rgba(255,255,255,0.1); }
     .menu-hamburger {
         display: flex;
         align-items: center;
@@ -1885,8 +1908,9 @@ body.sem-scroll { overflow: hidden; }
 
     /* Status */
     .statuscomissoes { margin: 36px 12px 0; }
-    .cardsstatus { flex-direction: column; }
-    .cardstatus { max-width: 100%; }
+    .cardsstatus { flex-direction: column; align-items: stretch; gap: 16px; }
+    .cardstatus { flex: none; width: 100%; max-width: 100%; }
+    .cardstatus img { aspect-ratio: 16 / 5; }
 
     /* Cards de mods */
     .cardsmods { grid-template-columns: 1fr 1fr; margin: 36px 12px 0; gap: 10px; }
