@@ -7,6 +7,11 @@ function fitToScreen() {
     document.body.style.width = '';
     document.documentElement.style.height = '';
     wrapper.style.transform = 'none';
+    if (window.innerWidth <= 768) {
+        wrapper.style.width = '';
+        return;
+    }
+    wrapper.style.width = '1920px';
     const naturalHeight = wrapper.offsetHeight;
     const scale = window.innerWidth / 1920;
     wrapper.style.transform = `scale(${scale})`;
@@ -872,4 +877,31 @@ setInterval(trocarSkin, 3000);
 const resizeObserver = new ResizeObserver(() => {
     fitToScreen();
 });
-resizeObserver.observe(document.getElementById('zoom-wrapper'));``
+resizeObserver.observe(document.getElementById('zoom-wrapper'));
+
+const menuHamburger = document.getElementById('menuHamburger');
+const menuMobile = document.getElementById('menuMobile');
+const menuMobileFechar = document.getElementById('menuMobileFechar');
+
+if (menuHamburger && menuMobile) {
+    menuHamburger.addEventListener('click', () => {
+        menuMobile.classList.add('aberto');
+        document.body.classList.add('sem-scroll');
+    });
+
+    menuMobileFechar.addEventListener('click', () => {
+        menuMobile.classList.remove('aberto');
+        document.body.classList.remove('sem-scroll');
+    });
+
+    menuMobile.querySelectorAll('[data-modo]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modo = link.dataset.modo;
+            menuMobile.classList.remove('aberto');
+            document.body.classList.remove('sem-scroll');
+            trocarModo(modo);
+            window.scrollTo({ top: 0 });
+        });
+    });
+}``
