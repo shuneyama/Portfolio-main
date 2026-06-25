@@ -1816,8 +1816,8 @@ body.sem-scroll { overflow: hidden; }
         left: 50% !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
-        width: 44px !important;
-        height: 44px !important;
+        width: 58px !important;
+        height: 58px !important;
         z-index: 5 !important;
         border-radius: 8px;
     }
