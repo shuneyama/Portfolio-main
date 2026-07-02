@@ -709,6 +709,7 @@ main {
 .mini-post-card {
     flex: 1 1 0;
     min-width: 0;
+    max-width: calc(33.33% - 20px);
     background-color: rgba(0,0,0,0.45);
     border-radius: 10px;
     overflow: hidden;
@@ -2003,6 +2004,7 @@ body.sem-scroll { overflow: hidden; }
     /* Posts mini */
     .postscriacoes { margin: 36px 12px 0; padding: 18px 14px; }
     .postscriacoes-cards { flex-direction: column; gap: 10px; }
+    .mini-post-card { max-width: 100%; }
 
     /* Voltar ao topo */
     .criacoes-voltartopo {
