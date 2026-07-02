@@ -432,7 +432,10 @@ function renderizarPosts() {
     feed.innerHTML = filtrados.map(p => gerarPostHTML(p)).join('');
 
     feed.querySelectorAll('.post-card').forEach(card => {
-        card.addEventListener('click', () => abrirModalPost(card.dataset.postId));
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.video-capa, .video-play-btn') || e.target.tagName === 'VIDEO') return;
+            abrirModalPost(card.dataset.postId);
+        });
     });
 
     feed.querySelectorAll('[data-curtir]').forEach(btn => {
