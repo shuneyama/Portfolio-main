@@ -369,8 +369,9 @@ function gerarPostHTML(post, dentroModal = false) {
     const curtido = localStorage.getItem(`curtido_${post.id}`) === '1';
     const anexos = (post.anexos || []).slice(0, 4);
     const tagsHTML = (post.tags || []).map(t => `<span class="post-tag ${t}">${t}</span>`).join('');
+    const origemClass = post.origem === 'comissao' ? 'comissao' : 'proprio';
     const origemHTML = post.origem
-        ? `<span class="post-tag ${post.origem}">${post.origem === 'comissao' ? 'feito para comissão' : 'feito por mim'}</span>`
+        ? `<span class="post-tag ${origemClass}">${post.origem === 'comissao' ? 'feito para comissão' : 'feito por mim'}</span>`
         : '';
     const conteudoFormatado = post.conteudo ? linkificar(post.conteudo.replace(/\n/g, '<br>')) : '';
 
