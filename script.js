@@ -227,6 +227,7 @@ function renderizarMiniPosts() {
         .sort((a, b) => new Date(b.data) - new Date(a.data))
         .slice(0, 3);
 
+
     if (!comMedia.length) {
         container.style.display = 'none';
         return;
@@ -235,7 +236,7 @@ function renderizarMiniPosts() {
     const cardsHTML = comMedia.map(post => {
         const media = post.anexos.find(a => ['imagem', 'gif', 'video'].includes(a.tipo));
         const mediaHTML = media.tipo === 'video'
-            ? `<video src="${media.url}" muted preload="metadata"></video>`
+            ? (media.capa ? `<img src="${media.capa}" alt="">` : `<video src="${media.url}" muted preload="metadata"></video>`)
             : `<img src="${media.url}" alt="">`;
         return `
             <div class="mini-post-card" data-post-id="${post.id}">
@@ -337,6 +338,9 @@ function renderizarAnexo(anexo) {
         return `<div class="post-anexo"><img src="${anexo.url}" alt="" data-imagem="${anexo.url}"></div>`;
     }
     if (anexo.tipo === 'video') {
+        if (anexo.capa) {
+            return `<div class="post-anexo"><div class="video-capa" data-video-url="${anexo.url}"><img src="${anexo.capa}" alt="preview" class="video-capa-img"><button class="video-play-btn" aria-label="Reproduzir"><svg viewBox="0 0 24 24" width="52" height="52" fill="white"><polygon points="6,3 20,12 6,21"/></svg></button></div></div>`;
+        }
         return `<div class="post-anexo"><video src="${anexo.url}" controls></video></div>`;
     }
     if (anexo.tipo === 'audio') {
@@ -710,6 +714,20 @@ window.addEventListener('resize', () => {
             }
         });
     }
+});
+
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.video-play-btn');
+    if (!btn) return;
+    const capa = btn.closest('.video-capa');
+    const videoUrl = capa.dataset.videoUrl;
+    const video = document.createElement('video');
+    video.src = videoUrl;
+    video.controls = true;
+    video.autoplay = true;
+    video.style.width = '100%';
+    video.style.borderRadius = '8px';
+    capa.replaceWith(video);
 });
 
 document.getElementById('criacoesBusca').addEventListener('input', renderizarPosts);
