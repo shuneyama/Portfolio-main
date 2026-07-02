@@ -1254,6 +1254,10 @@ body.bg-parceiros .fundo-parceiros {
     aspect-ratio: 16 / 10;
 }
 
+.post-anexo:has(.video-capa) {
+    aspect-ratio: auto;
+}
+
 .post-anexo img,
 .post-anexo video {
     width: 100%;
