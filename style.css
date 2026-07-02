@@ -655,6 +655,8 @@ main {
     margin-right: 50px;
 }
 
+.postscriacoes:not(:has(*)) { display: none; }
+
 .postscriacoes-vermais {
     background: linear-gradient(
         to bottom,
